@@ -1,3 +1,9 @@
+# DON'T USE THIS
+
+This fork was changed especially for a [University project](https://github.com/AnthropocentricAI/fat-inspector). It assumes that your graph _only_ uses circular nodes and the `panAndZoom` property is set to false. This is not maintained.
+
+Huge thanks to [@danielcaldas](https://github.com/danielcaldas/) for this great package.
+
 # react-d3-graph &middot; [![Build Status](https://travis-ci.org/danielcaldas/react-d3-graph.svg?branch=master&style=flat-square)](https://travis-ci.org/danielcaldas/react-d3-graph)
 
 [![npm version](https://img.shields.io/npm/v/react-d3-graph.svg?style=flat-square)](https://www.npmjs.com/package/react-d3-graph) [![probot enabled](https://img.shields.io/badge/probot:stale-enabled-yellow.svg?longCache=true&style=flat-square)](https://probot.github.io/) [![trello](https://img.shields.io/badge/trello-board-blue.svg?longCache=true&style=flat-square)](https://trello.com/b/KrnmFXha/react-d3-graph)
@@ -20,9 +26,9 @@
 
 You can also load different datasets and configurations via URL query parameter, here are the links:
 
-*   [small dataset](https://goodguydaniel.com/react-d3-graph/sandbox/index.html?data=small) - small example.
-*   [custom node dataset](https://goodguydaniel.com/react-d3-graph/sandbox/index.html?data=custom-node) - sample config with custom views.
-*   [marvel dataset!](https://goodguydaniel.com/react-d3-graph/sandbox/index.html?data=marvel) - sample config with directed collapsible graph and custom svg nodes.
+-   [small dataset](https://goodguydaniel.com/react-d3-graph/sandbox/index.html?data=small) - small example.
+-   [custom node dataset](https://goodguydaniel.com/react-d3-graph/sandbox/index.html?data=custom-node) - sample config with custom views.
+-   [marvel dataset!](https://goodguydaniel.com/react-d3-graph/sandbox/index.html?data=marvel) - sample config with directed collapsible graph and custom svg nodes.
 
 Do you want to visualize your own data set on the live sandbox? Just submit a PR! You're welcome 😁
 
@@ -44,12 +50,12 @@ Graph component is the main component for react-d3-graph components, its interfa
 The code for the [live example](https://danielcaldas.github.io/react-d3-graph/sandbox/index.html) can be consulted [here](https://github.com/danielcaldas/react-d3-graph/blob/master/sandbox/Sandbox.jsx).
 
 ```javascript
-import { Graph } from 'react-d3-graph';
+import { Graph } from "react-d3-graph";
 
 // graph payload (with minimalist structure)
 const data = {
-    nodes: [{ id: 'Harry' }, { id: 'Sally' }, { id: 'Alice' }],
-    links: [{ source: 'Harry', target: 'Sally' }, { source: 'Harry', target: 'Alice' }]
+    nodes: [{ id: "Harry" }, { id: "Sally" }, { id: "Alice" }],
+    links: [{ source: "Harry", target: "Sally" }, { source: "Harry", target: "Alice" }],
 };
 
 // the graph configuration, you only need to pass down properties
@@ -57,13 +63,13 @@ const data = {
 const myConfig = {
     nodeHighlightBehavior: true,
     node: {
-        color: 'lightgreen',
+        color: "lightgreen",
         size: 120,
-        highlightStrokeColor: 'blue'
+        highlightStrokeColor: "blue",
     },
     link: {
-        highlightColor: 'lightblue'
-    }
+        highlightColor: "lightblue",
+    },
 };
 
 // graph event callbacks

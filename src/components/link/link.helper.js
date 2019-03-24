@@ -64,16 +64,25 @@ function getRadiusStrategy(type) {
  * @param {Object} link - the link to build the path definition
  * @param {Object} link.source - link source
  * @param {Object} link.target - link target
+ * @param {number} nodeSize - node size (circumference)
+ * @param {bool} directed - whether the links are directed
+ * @param {number} strokeWidth - the link stroke sidth
  * @param {string} type - the link line type
  * @returns {string} the path definition for the requested link
  * @memberof Link/helper
  */
-function buildLinkPathDefinition({ source = {}, target = {} }, type = LINE_TYPES.STRAIGHT) {
-    const { x: sx, y: sy } = source;
-    const { x: tx, y: ty } = target;
+function buildLinkPathDefinition({ source = {}, target = {} }, nodeSize, type = LINE_TYPES.STRAIGHT) {
+    let { x: sx, y: sy } = source;
+    let { x: tx, y: ty } = target;
+    const angle = Math.atan2(ty - sy, tx - sx);
+    let r = Math.sqrt(nodeSize / Math.PI);
     const validType = LINE_TYPES[type] || LINE_TYPES.STRAIGHT;
     const radius = getRadiusStrategy(validType)(sx, sy, tx, ty);
 
+    sx += r * Math.cos(angle);
+    sy += r * Math.sin(angle);
+    tx -= r * Math.cos(angle);
+    ty -= r * Math.sin(angle);
     return `M${sx},${sy}A${radius},${radius} 0 0,1 ${tx},${ty}`;
 }
 

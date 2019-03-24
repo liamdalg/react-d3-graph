@@ -109,10 +109,11 @@ function _renderDefs() {
         const medium = small + (MARKER_MEDIUM_OFFSET * config.maxZoom) / 3;
         const large = small + (MARKER_LARGE_OFFSET * config.maxZoom) / 3;
 
+        // NOTE: refX is 6 - some arbitrary number for now just to make it look pretty
         cachedDefs = (
             <defs>
-                <Marker id={MARKERS.MARKER_S} refX={small} fill={config.link.color} />
-                <Marker id={MARKERS.MARKER_SH} refX={small} fill={config.link.highlightColor} />
+                <Marker id={MARKERS.MARKER_S} refX={5.3} fill={config.link.color} />
+                <Marker id={MARKERS.MARKER_SH} refX={5.3} fill={config.link.highlightColor} />
                 <Marker id={MARKERS.MARKER_M} refX={medium} fill={config.link.color} />
                 <Marker id={MARKERS.MARKER_MH} refX={medium} fill={config.link.highlightColor} />
                 <Marker id={MARKERS.MARKER_L} refX={large} fill={config.link.color} />

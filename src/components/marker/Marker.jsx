@@ -13,7 +13,7 @@ export default class Marker extends React.Component {
             <marker
                 className="marker"
                 id={this.props.id}
-                viewBox="0 -5 10 10"
+                viewBox="0 -3 6 6"
                 refX={this.props.refX}
                 refY="0"
                 markerWidth="6"
@@ -21,7 +21,7 @@ export default class Marker extends React.Component {
                 orient="auto"
                 fill={this.props.fill}
             >
-                <path d="M0,-5L10,0L0,5" />
+                <path d="M0,-3L6,0L0,3" />
             </marker>
         );
     }
